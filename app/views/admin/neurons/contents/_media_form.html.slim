@@ -1,0 +1,13 @@
+fieldset
+  legend = t("views.contents.media")
+  .row
+    .col-xs-12.content-medium-forms
+      = f.fields_for :content_medium do |content_media_form|
+        = render "admin/neurons/content_media/form",
+                 f: content_media_form
+
+      = f.link_to_add :content_medium,
+                      class: "btn-sm btn btn-default bs-tooltip",
+                      title: t("views.contents.attach_media"),
+                      data: { placement: "left" } do
+        span.glyphicon.glyphicon-plus.text-success

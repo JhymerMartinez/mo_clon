@@ -1,0 +1,13 @@
+# automatically adds NUMBER_OF_POSSIBLE_ANSWERS
+# possible answers to content form
+# removes add btn once enough possible answers
+# are added
+
+number_of_possible_answers = <%= Content::NUMBER_OF_POSSIBLE_ANSWERS %>
+
+$(document).on "nested:fieldAdded:contents", (e) ->
+  $contentForm = e.field
+  $addPossibleAnswerBtn = $contentForm.find(".add-possible-answer")
+  for i in [1..number_of_possible_answers]
+    $addPossibleAnswerBtn.trigger "click"
+  $addPossibleAnswerBtn.remove()

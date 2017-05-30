@@ -1,0 +1,41 @@
+$height: 100px
+
+.dashboard-pagination
+  ul.pagination
+    margin-bottom: 5px
+
+.neuron_dashboard
+  padding-top: 10px
+  position: relative
+  &:hover
+    .neuron-edit
+      display: block
+  .neuron-show
+    text-decoration: none
+  .neuron_dashboard_content
+    border-radius: 0.3em
+    border: 1px solid #eee
+    height: $height
+    padding: 5px 10px
+    overflow: hidden
+    &:hover
+      box-shadow: 0 1px 2px #ccc
+
+    .neuron-contents-badges
+      float: right
+
+  .neuron-edit
+    text-decoration: none
+    position: absolute
+    top: $height - 20
+    right: 25px
+    display: none
+    &:hover
+      text-shadow: 0 1px 1px #aaa
+
+.search_box
+  padding-top: 10px
+  .form-control
+    border-radius: 1em 0 0 1em !important
+  .btn
+    border-radius: 0 1em 1em 0 !important

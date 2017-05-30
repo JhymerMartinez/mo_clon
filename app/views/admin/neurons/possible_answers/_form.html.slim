@@ -1,0 +1,13 @@
+= f.hidden_field :id
+
+.row.form-group
+  .col-xs-1.text-right
+    = tooltip t("views.possible_answers.correct"),
+              place: "bottom",
+              tag: :span do
+      = f.check_box :correct
+
+  .col-xs-11
+    = f.text_field :text,
+                   placeholder: t("activerecord.attributes.possible_answer.text"),
+                   class: "form-control"

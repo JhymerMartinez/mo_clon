@@ -1,0 +1,35 @@
+// sm is 768px
+@media (min-width: 768px)
+  .contents_form
+    .col-sm-10
+      border-left: 1px solid #eee
+    .form-group
+      margin-bottom: 5px
+    .fields
+      position: relative
+      textarea
+        max-width: 100%
+        padding-right: 25px
+      .remove_nested_fields
+        position: absolute
+        top: 0
+        right: 10px
+        padding-right: 0
+        &:hover .glyphicon
+          text-shadow: 0 1px 0 #aaa
+
+.contents_form
+  .fields
+    margin-bottom: 1em
+  // label
+  //   font-weight: normal
+  fieldset
+    padding: 0.3em 0 2em 0
+    legend
+      margin: 10px 0
+  hr.content-divider
+    margin: 30px 0 40px 0
+
+.content-form-source
+  .external-source-btn
+    padding-left: 0

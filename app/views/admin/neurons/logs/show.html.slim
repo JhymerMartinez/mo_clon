@@ -1,0 +1,22 @@
+- content_for :title, t("views.neurons.show_changelog")
+
+h2 = decorated_neuron.title
+
+- neuron_versions.each do |version|
+  .row.changelog-version
+    .col-xs-1.author
+      = version.who.avatar_with_link
+    .col-xs-9
+      => version.who.name_with_link
+      => version.event_explanation
+
+      span.text-info => version.changed_attrs
+
+      - if version.changed_keys.any?
+        .changeset-details
+          = render "changes", changes: version.changes
+
+          = version.render_relationship_changes
+
+    .col-xs-2
+      .text-muted.small = version.time_ago

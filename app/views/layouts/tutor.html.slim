@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title moi
+    = stylesheet_link_tag    "tutor", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "tutor", "data-turbolinks-track" => true
+    = csrf_meta_tags
+
+  body
+    = render "tutor/shared/main_navbar"
+    .container.container-tutor-main
+      = render "layouts/flashes"
+      = image_tag("tree_background.png", class:"main-image-background")
+      = yield

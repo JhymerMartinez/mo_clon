@@ -1,0 +1,13 @@
+# allows adding only certain number of links
+# removes addContentLinkBtn if enough links
+# have been added
+
+allowedNumberOfLinks = <%= Content::NUMBER_OF_LINKS %>
+linksFormSelector = ".content-links-form"
+
+$(document).on "nested:fieldAdded:content_links", (e) ->
+  $linksForm = e.field.closest(linksFormSelector)
+  numberOfLinks = $linksForm.find(".nested-content-link").length
+  $addContentLinkBtn = $linksForm.find(".add-content-link")
+  if numberOfLinks >= allowedNumberOfLinks
+    $addContentLinkBtn.remove()

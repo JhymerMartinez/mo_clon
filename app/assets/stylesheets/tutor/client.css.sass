@@ -1,0 +1,147 @@
+$base-color-green: #77BF5D
+$white: white
+
+.container-client-empty
+  align-items: center
+  justify-content: center
+
+  .action-button
+    background-color: $base-color-green
+    width: 22rem
+    height: 8rem
+    text-decoration: none
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    color: $white
+    &:hover
+      color: $white
+
+.container-client
+  border: 0.1rem solid $base-color-green
+  display: flex
+  &:after
+    background-color: $base-color-green
+
+  &:before
+    background-color: $base-color-green
+
+  .left-container
+    flex-basis: 40%
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    align-items: stretch
+    padding: 1.5rem
+
+    .user-image-status
+      text-align: center
+      img
+        width: 15rem
+
+    .user-name
+      overflow: hidden
+      max-width: 39rem
+      padding: 0 2rem
+      text-overflow: ellipsis
+      text-align: center
+      font-size: 2.3rem
+      font-weight: bold
+      color: $base-color-green
+      white-space: nowrap
+
+    .grid-info-container
+      display: flex
+      flex-direction: column
+      padding: 0 2rem
+      color: $base-color-green
+
+    .row-info
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      margin: 0.5rem 0
+      border-bottom: 0.1rem solid $base-color-green
+      padding: 0.5rem 0
+
+      .first-cell
+        flex-basis: 20%
+        padding-left: 1rem
+        border-left: 0.4rem solid $base-color-green
+
+      .second-cell
+        flex-basis: 80%
+        padding-left: 1rem
+
+      .first-cell-header
+        color: $white
+        background-color: $base-color-green
+        height: 4rem
+        display: flex
+        align-items: center
+        border-bottom-left-radius: 0.5rem
+        border-top-left-radius: 0.5rem
+
+      .second-cell-header
+        color: $white
+        background-color: $base-color-green
+        height: 4rem
+        display: flex
+        align-items: center
+        border-bottom-right-radius: 0.5rem
+        border-top-right-radius: 0.5rem
+        border-left: 0.1rem solid $white
+
+    .row-info-header
+      padding: 0
+      border: none
+      font-weight: bold
+
+    .link-activity-container
+      position: relative
+      text-align: center
+      margin-top: 1rem
+
+    .link-user-client-activity
+      color: $base-color-green
+      text-decoration: underline
+      font-weight: bold
+
+      &:hover
+        color: $base-color-green
+      &:after
+        position: absolute
+        content: ""
+        width: 0
+        height: 0
+        top: 0.3rem
+        border-top: 0.6rem solid transparent
+        border-right: 0.6rem solid transparent
+        border-bottom: 0.6rem solid transparent
+        border-left: 0.6rem solid $base-color-green
+        margin-left: 0.5rem
+
+  .right-container
+    flex-basis: 60%
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    padding: 1.5rem 0
+    margin-right: 0.5rem
+
+    .tree_landscape
+      position: absolute
+      width: 100%
+      z-index: 0
+
+    .tree_frame
+      position: absolute
+      width: 100%
+      z-index: 1
+
+    .tree-image
+      position: absolute
+      z-index: 2
+      width: 100%

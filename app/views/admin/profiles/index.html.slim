@@ -1,0 +1,18 @@
+- content_for :title, t("activerecord.models.profile").pluralize
+
+- if can? :manage, Profile
+  .pull-right
+    = link_to new_admin_profile_path,
+              class: "btn btn-default btn-xs" do
+      i.glyphicon.glyphicon-plus
+
+p.text-muted
+  = pluralize profiles.count,
+              t("activerecord.models.profile")
+
+ul.profiles-list
+  - profiles.each do |profile|
+    li
+      = link_to admin_profile_path(profile),
+                class: "profile-name" do
+        = profile.name

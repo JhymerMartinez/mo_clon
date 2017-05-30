@@ -1,0 +1,9 @@
+- if resource.errors.any?
+  .panel.panel-danger
+    .panel-heading
+      h4.panel-title = pluralize resource.errors.count, "error", "errores"
+
+    .panel-body
+      ul
+        - resource.errors.full_messages.each do |msg|
+          li = msg

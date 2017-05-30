@@ -1,0 +1,38 @@
+/ knowledge search modal
+= render "admin/neurons/knowledge_search/form"
+
+= nested_form_for [:admin, neuron], html: {class: "neuron-form"} do |f|
+  = render "admin/shared/form_errors", resource: neuron
+
+  = f.hidden_field :id
+
+  ul.nav.nav-tabs.default-tabs
+    li.active data-toggle="tab"
+      = link_to t("views.neurons.general"),
+                "#general",
+                class: "persist-tab"
+
+    li data-toggle="tab"
+      = link_to t("activerecord.models.content").pluralize,
+                "#contents",
+                class: "persist-tab"
+
+  .tab-content
+    .tab-pane#general.active
+      = render "general_form", f: f
+
+    .tab-pane#contents
+      = render "contents_form", f: f
+
+  .actions
+    - unless decorated_neuron.versions.empty?
+      = link_to t("views.neurons.show_changelog"),
+                admin_neuron_log_path(neuron),
+                class: "btn btn-link"
+
+    = link_to t("actions.preview"),
+              admin_neuron_preview_path,
+              class: "btn btn-default preview-btn"
+
+    = f.submit class: "btn btn-primary",
+               data: {disable_with: t("views.submitting")}

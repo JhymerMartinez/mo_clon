@@ -1,0 +1,12 @@
+fieldset
+  legend = t("views.contents.videos")
+  .row
+    .col-xs-12.content-videos-form
+      = f.fields_for :content_videos do |content_video_form|
+        = render "admin/neurons/content_videos/form",
+                 f: content_video_form
+
+      - if f.object.able_to_have_more_videos?
+        = f.link_to_add :content_videos,
+                        class: "btn-sm btn btn-default add-content-video" do
+          span.glyphicon.glyphicon-plus.text-success

@@ -1,0 +1,9 @@
+li data-id="#{neuron.id}"
+  span.toggle-children.glyphicon.glyphicon-triangle-right
+  = neuron.title
+  = link_to admin_neuron_path(neuron),
+            target: "_blank" do
+    span.open-neuron.glyphicon.glyphicon-share-alt
+  ol
+    - neuron.children_neurons.each do |child_neuron|
+      = render "admin/neurons/sort/neuron", neuron: child_neuron

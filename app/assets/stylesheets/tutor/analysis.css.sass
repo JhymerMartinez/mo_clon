@@ -1,0 +1,159 @@
+$base-color-red: #F0755C
+$base-color-red-opacity: #F2A597
+$max-height: 50rem
+$border-color-1: #D1D5C8
+$inactive-color: #AFAFAE
+$white: white
+
+.container-analysis-empty
+  align-items: center
+  justify-content: center
+
+  .action-button
+    background-color: $base-color-red
+    width: 22rem
+    height: 8rem
+    text-decoration: none
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    color: $white
+    &:hover
+      color: $white
+
+.container-analysis
+  border: 0.1rem solid $base-color-red
+  display: flex
+  &:after
+    background-color: $base-color-red
+
+  &:before
+    background-color: $base-color-red
+
+  .disabled
+    pointer-events: none
+    cursor: default
+
+  .user-name
+    position: absolute
+    top: -4rem
+    font-size: 2.3rem
+    font-weight: bold
+    color: $base-color-red
+    left: 7rem
+    width: 93rem
+    max-width: 93rem
+    text-overflow: ellipsis
+    overflow: hidden
+    white-space: nowrap
+    text-align: center
+
+  .left-container
+    flex-basis: 50%
+    display: flex
+    flex-direction: column
+    max-height: $max-height
+    overflow-y: scroll
+
+    .row-client
+      display: flex
+      align-items: center
+      border-bottom: 0.1rem solid $border-color-1
+      padding: 0.5rem
+      cursor: pointer
+      margin: 0.3rem 0
+      min-height: 7rem
+      height: 7rem
+
+    .image-selector-container
+      display: none
+      flex-basis: 10%
+      img
+        width: 4rem
+    .image-avatar-container
+      flex-basis: 20%
+      padding-left: 0.5rem
+      .active
+        img
+          width: 7rem
+          display: none
+      .inactive
+        img
+          width: 7rem
+          display: block
+
+    .user-name
+      font-size: 2.5rem
+      color: $inactive-color
+      font-weight: bold
+
+    & .ui-selected
+      .image-selector-container
+        display: block
+      .image-avatar-container
+        border-left: 0.1rem solid $border-color-1
+      .active
+        img
+          display: block
+      .inactive
+        img
+          display: none
+      .user-name
+        color: $base-color-red
+
+  .right-container
+    flex-basis: 50%
+    display: flex
+    justify-content: flex-end
+    align-items: flex-end
+    padding: 1rem
+
+    .action-button
+      background-color: $base-color-red
+      width: 12rem
+
+    .analysis-link
+      background-color: $base-color-red
+      color: $white
+
+      &:hover
+        color: $white
+
+      &.disabled
+        background-color: $inactive-color
+
+  &.analysis-details
+    display: flex
+    flex-direction: column
+
+    .row-analysis-info
+      display: flex
+      justify-content: space-around
+
+    .container-analysis-info
+      color: $white
+      flex-basis: 40%
+      padding: 1rem
+      .header
+        padding: 1rem
+        background-color: $base-color-red-opacity
+        border-top-left-radius: 0.5rem
+        border-top-right-radius: 0.5rem
+        display: flex
+        align-items: center
+        justify-content: center
+        font-weight: bold
+
+      .body
+        border-bottom-left-radius: 0.5rem
+        border-bottom-right-radius: 0.5rem
+        padding: 1rem
+        background-color: $base-color-red
+        display: flex
+        align-items: center
+        justify-content: center
+
+  .search-form-analysis
+    .search-form-container-analysis
+      border: 0.1rem solid $base-color-red

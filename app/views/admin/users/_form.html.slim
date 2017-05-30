@@ -1,0 +1,28 @@
+= form_for [:admin, user] do |f|
+  = render "admin/shared/form_errors", resource: user
+
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :email
+    = f.email_field :email, class: "form-control", required: true
+
+  .form-group
+    = f.label :role
+    = f.select :role, roles, {}, class: "form-control"
+
+  - if current_user == user
+    h6.text-danger = t("warning.messages.change_rol")
+
+  .form-group
+    = f.label :password
+    = f.password_field :password, class: "form-control"
+
+  .form-group
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, class: "form-control"
+
+  .actions
+    = f.submit class: "btn btn-primary", data: {disable_with: t("views.submitting")}

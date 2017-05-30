@@ -1,0 +1,23 @@
+= form_for [:admin, profile] do |f|
+  = render "admin/shared/form_errors",
+           resource: profile
+
+  .form-group
+    = f.label :name
+    = f.text_field :name,
+                   class: "form-control",
+                   required: true
+
+  .form-group
+    = f.label :biography
+    = f.text_area :biography,
+                  class: "form-control"
+
+  .form-group#tree-for-profile-editor
+    = f.hidden_field :neuron_ids
+
+    = decorate(f.object).moi_tree_form
+
+  .actions
+    = f.submit class: "btn btn-primary",
+               data: { disable_with: t("views.submitting") }

@@ -1,0 +1,35 @@
+#moi_tree
+  .node
+    circle
+      fill: #fff
+      stroke: steelblue
+      stroke-width: 1.5px
+      cursor: pointer
+
+    text
+      cursor: pointer
+      &:hover
+        font-weight: bold
+
+  .node
+    font: 10px sans-serif
+
+  .link
+    fill: none
+    stroke: #ccc
+    stroke-width: 1.5px
+
+.neurons-popover
+  .popover-title
+    padding-right: 20px
+    padding-left: 8px
+  .popover-content
+    padding: 9px 8px 5px 8px
+  .close
+    position: absolute
+    top: 0
+    right: 2px
+
+svg
+  pointer-events: all
+  background-color: #fafafa

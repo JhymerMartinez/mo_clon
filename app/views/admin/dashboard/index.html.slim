@@ -1,0 +1,29 @@
+- content_for :title, t("activerecord.models.neuron").pluralize
+
+.text-center = neuron_state_switcher
+
+.row
+  .col-lg-6
+    = form_tag(admin_root_path, method: :get) do
+      .input-group.search_box
+        = hidden_field_tag :state, neuron_scope
+        = text_field_tag :q, params[:q], class: "form-control"
+        span.input-group-btn
+          = submit_tag t("actions.search"),
+                       class: "btn btn-default",
+                       data: { disable_with: t("views.submitting") }
+
+.landing-page-neurons
+  = render partial: "neuron",
+           collection: decorated_neurons
+
+.clearfix
+
+.dashboard-pagination.text-center
+  = paginate neurons
+  - if neurons.any?
+    .text-muted
+      => t("views.dashboard.neurons_count",
+          count: neurons.length)
+      = t("views.dashboard.neurons_total_count",
+          count: neurons.total_count)

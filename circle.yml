@@ -1,0 +1,8 @@
+machine:
+  ruby:
+    version: 2.1.4
+  environment:
+    CAPYBARA_SERVER_PORT: 5000
+test:
+  override:
+    - RAILS_ENV=test bundle exec rspec -r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml

@@ -1,0 +1,22 @@
+sudo: false
+language: ruby
+cache: bundler
+rvm:
+  - 2.1.4
+bundler_args: --without development
+addons:
+  postgresql: 9.3
+  apt:
+    packages:
+      - aspell-es
+env:
+  - RAILS_ENV=test CAPYBARA_SERVER_PORT=5000
+before_script:
+  - /bin/cp $TRAVIS_BUILD_DIR/config/database.yml.example.yml $TRAVIS_BUILD_DIR/config/database.yml
+script:
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rspec
+notifications:
+  email: false
+  slack: vilcabamba:CneKnHTsIp8fYHEgcQw7lu6s

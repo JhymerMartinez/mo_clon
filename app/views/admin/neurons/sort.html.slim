@@ -1,0 +1,16 @@
+- content_for :title, t("views.neurons.sort_tree")
+
+blockquote
+  p Ordenar el árbol puede ser pesado para la base de datos, por lo tanto el sistema realizará una sola operación a la vez
+
+.sortable-tree-placeholder = t("views.loading")
+
+.sortable-tree-status.pull-right
+
+.sortable-tree-actions
+  => link_to "expandir todo", "#", data: { action: "expand" }
+  ' /
+  = link_to "contraer todo", "#", data: { action: "collapse" }
+
+.sortable-tree-wrapper
+  ol.sortable-tree

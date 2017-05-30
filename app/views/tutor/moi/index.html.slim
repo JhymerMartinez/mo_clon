@@ -1,0 +1,29 @@
+.container-tutor-internal.container-moi
+  = form_tag tutor_moi_index_path, method: "get", class:"search-form search-form-moi" do
+    .search-form-container.search-form-container-moi
+      .input-serction
+        = image_tag "icon_search.png", class: "search-form-icon-search"
+        = text_field_tag :search, params[:search], class:"search-form-input"
+      .button-section
+        = submit_tag "", name: nil, class:"search-form-submit"
+        = image_tag "icon_reload.png", class: "search-form-icon-reload"
+
+  .left-container
+    .title = t("views.tutor.moi.title_clients")
+    .list-clients-wrapper
+      #list-clients
+        - for client in @clients
+          .row-client(id="user_#{client.id}")
+            .image-selector-container
+              = image_tag("row_selected.png")
+            .image-avatar-container
+              .active = image_tag("client_avatar.png")
+              .inactive = image_tag("client_avatar_inactive.png")
+            .user-name
+              = client.name
+  .center-container
+    .title = t("views.tutor.moi.title_students")
+    .list-students-wrapper
+      #list-students
+  .right-container
+    button.action-button(id="button-send-invitation") Enviar Invitación

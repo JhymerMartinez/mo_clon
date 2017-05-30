@@ -1,0 +1,16 @@
+- content_for :title, t("activerecord.models.user").pluralize
+
+= datatable source: admin_users_path(format: :json) do
+  thead
+    tr
+      th #{t("activerecord.attributes.user.name")}
+      th #{t("activerecord.attributes.user.email")}
+      th #{t("activerecord.attributes.user.role")}
+      th
+  tbody
+
+hr
+
+.pull-right
+  = link_to t("views.users.new"), new_admin_user_path, class: "btn btn-sm btn-default"
+.clearfix

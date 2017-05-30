@@ -1,0 +1,465 @@
+# Spanish translations for Rails
+# by Francisco Fernando García Nieto (ffgarcianieto@gmail.com)
+# contributors:
+#  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
+# Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
+#
+# Added custom translations by vilcabamba's team
+#
+
+"es":
+  views:
+    submitting: "Enviando.."
+    unauthorized: "No tienes permiso para realizar esta acción"
+    search_engines: Motores de búsqueda
+    loading: "Cargando.."
+    pagination:
+      previous: "&lt;"
+      next: "&gt;"
+      truncate: "..."
+      last: "&uacute;ltimo"
+      first: "primero"
+    main_navbar:
+      users: Usuarios
+      dashboard: Escritorio
+      neurons: Neuronas
+      settings: Preferencias
+      profiles: Árboles
+    users:
+      new: "Nuevo Usuario"
+      edit: "Editar Usuario"
+      created: "Usuario creado"
+      updated: "Usuario actualizado"
+      show: "Mostrar Usuario"
+    neurons:
+      new: "Nueva Neurona"
+      created: "Neurona creada"
+      updated: "Neurona actualizada"
+      new_child: "Nuevo hijo"
+      edit: "Editar Neurona"
+      show: "Mostrar Neurona"
+      show_changelog: "Mostrar Historial de Cambios"
+      contents: "Contenidos"
+      add_content: Agregar contenido
+      general: General
+      restore: "Neurona restaurada"
+      delete: "Neurona eliminada"
+      deleted: Eliminado
+      active: "Activa"
+      inactive: "Inactiva"
+      sort_tree: Ordenar árbol
+      public_status:
+        "true": Pública
+        "false": No es pública
+    changelog:
+      update: actualizó
+      create: creó este registro con
+      time_ago: "hace %{time_ago}"
+      delete: eliminó este registro
+      restore: restauró este registro
+      active_neuron: moderó neurona
+      approve_content: moderó contenido
+      "true": "Sí"
+      "false": "No"
+      done:
+        update: Actualizado
+        create: Creado
+        delete: Eliminado
+    search_engine:
+      edit: Editar motor de búsqueda
+      new: Nuevo motor de búsqueda
+      gcse_help_block: Identificador de Google único para este motor
+      updated: Motor de búsqueda actualizado
+      created: Motor de búsqueda creado
+      active_status:
+        "true": Activo
+        "false": Inactivo
+    contents:
+      new: "Nuevo Contenido"
+      edit: "Editar Contenido"
+      created: "Contenido creado"
+      updated: "Contenido actualizado"
+      show: "Mostrar contenidos"
+      keyword_list_form_instructions: Separadas por coma
+      external_source: Consultar fuente externa
+      external_source_help: Copia y pega el texto que necesites. La fuente será agregada automáticamente
+      search_query: Términos de búsqueda
+      aspell_not_present: "Advertencia: este texto no ha sido revisado ortográficamente"
+      attach_media: Adjuntar multimedia
+      remove_media: Eliminar multimedia
+      title_tooltip: Título de la pregunta del test
+      to_approve: "Por Aprobar"
+      test: Test
+      basic_info: Información básica
+      media: Multimedia
+      medium: Multimedia
+      videos: Vídeos
+      video_placeholder: Video destacado
+      links: Enlaces
+      link_placeholder: http://www.growmoi.com
+      add_link: Agregar enlace
+      contents: Contenidos
+      levels:
+        "1": "Principiante"
+        "2": "Intermedio"
+        "3": "Avanzado"
+      toggled_approve:
+        "true": "Contenido aprobado"
+        "false": "Contenido desaprobado"
+      toggle_approve:
+        approved: Aprobar
+        unapproved: Reprobar
+      approved_status:
+        approved: Aprobado
+        unapproved: No aprobado
+      kinds:
+        que-es: "Qué es"
+        como-funciona: "Cómo funciona"
+        por-que-es: "Por qué es"
+        quien-cuando-donde: "Quién/Cuándo/Dónde"
+        videos: "Vídeos"
+    profiles:
+      new: Nuevo árbol
+      edit: Editar árbol
+      updated: Árbol actualizado
+    possible_answers:
+      correct: Respuesta correcta
+      incorrect: Respuesta incorrecta
+    dashboard:
+      neurons_count: Mostrando %{count} neuronas de un total de
+      neurons_total_count: "%{count} neuronas"
+    tutor:
+      moi:
+        analyze: "Enviar solicitud"
+        title_clients: "Usuarios"
+        title_students: "Mis Alumnos"
+      analysis:
+        analyze: "Seleccione análisis"
+        total_neurons_learnt: "Neuronas aprendidas"
+        total_content_readings: "Contenidos leidos"
+        total_right_questions: "Preguntas aprobadas"
+        total_notes: "Total de notas agregadas"
+        images_opened_in_count: "Imágenes abiertas"
+        user_sign_in_count: "Total de sesiones iniciadas"
+        used_time: "Tiempo de uso"
+      client:
+        select_user: "Antes se debe seleccionar un usuario"
+        activity: "Actividad"
+        description: "Descripción"
+        total_neurons_learnt: "Neuronas aprendidas"
+        total_content_readings: "Contenidos leidos"
+        total_right_questions: "Preguntas aprobadas"
+      navbar:
+        moi: "MOI"
+        tree: "Mi Árbol"
+        client: "Usuario"
+        analisys: "Análisis"
+        tutor: "Tutor"
+        logout: "Cerrar sesión"
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %b"
+      long: "%d de %B de %Y"
+      s_pagos_month: "%B, %Y"
+
+    day_names:
+      - domingo
+      - lunes
+      - martes
+      - miércoles
+      - jueves
+      - viernes
+      - sábado
+    abbr_day_names:
+      - dom
+      - lun
+      - mar
+      - mié
+      - jue
+      - vie
+      - sáb
+
+    month_names:
+      - ~
+      - enero
+      - febrero
+      - marzo
+      - abril
+      - mayo
+      - junio
+      - julio
+      - agosto
+      - septiembre
+      - octubre
+      - noviembre
+      - diciembre
+    abbr_month_names:
+      - ~
+      - ene
+      - feb
+      - mar
+      - abr
+      - may
+      - jun
+      - jul
+      - ago
+      - sep
+      - oct
+      - nov
+      - dic
+    order:
+      - :day
+      - :month
+      - :year
+
+  time:
+    formats:
+      default: "%A, %d de %B de %Y %H:%M:%S %z"
+      short: "%d de %b %H:%M"
+      long: "%d de %B de %Y %H:%M"
+      electriteleshow: "%H:%M, %d de %B de %Y"
+    am: "am"
+    pm: "pm"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " y "
+      last_word_connector: ", y "
+
+    select:
+      prompt: "Por favor seleccione"
+
+  number:
+    format:
+      separator: ","
+      delimiter: "."
+      precision: 3
+      significant: false
+      strip_insignificant_zeros: false
+
+    currency:
+      format:
+        format: "%n %u"
+        unit: "€"
+        separator: ","
+        delimiter: "."
+        precision: 2
+        significant: false
+        strip_insignificant_zeros: false
+
+    percentage:
+      format:
+        delimiter: ""
+
+    precision:
+      format:
+        delimiter: ""
+
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+        significant: true
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "mil"
+          million: "millón"
+          billion: "mil millones"
+          trillion: "billón"
+          quadrillion: "mil billones"
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "medio minuto"
+      less_than_x_seconds:
+        one:  "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      x_seconds:
+        one:  "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one:  "menos de 1 minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one:  "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one:  "alrededor de 1 hora"
+        other: "alrededor de %{count} horas"
+      x_days:
+        one:  "1 día"
+        other: "%{count} días"
+      about_x_months:
+        one:  "alrededor de 1 mes"
+        other: "alrededor de %{count} meses"
+      x_months:
+        one:  "1 mes"
+        other: "%{count} meses"
+      about_x_years:
+        one:  "alrededor de 1 año"
+        other: "alrededor de %{count} años"
+      over_x_years:
+        one:  "más de 1 año"
+        other: "más de %{count} años"
+      almost_x_years:
+        one: "casi 1 año"
+        other: "casi %{count} años"
+    prompts:
+      year:   "Año"
+      month:  "Mes"
+      day:    "Día"
+      hour:   "Hora"
+      minute: "Minutos"
+      second: "Segundos"
+
+  helpers:
+    select:
+      prompt: "Por favor seleccione"
+
+    submit:
+      create: 'Crear %{model}'
+      update: 'Actualizar %{model}'
+      submit: 'Guardar %{model}'
+
+  errors:
+    format: "%{message}"
+
+    messages: &errors_messages
+      inclusion: "%{attribute} no está incluido en la lista"
+      exclusion: "%{attribute} está reservado"
+      invalid: "%{attribute} no es válido"
+      confirmation: "%{attribute} no coincide con la confirmación"
+      accepted: "%{attribute} debe ser aceptado"
+      empty: "%{attribute} no puede estar vacío"
+      blank: "%{attribute} no puede estar en blanco"
+      too_long: "%{attribute} es demasiado largo (%{count} caracteres máximo)"
+      too_short: "%{attribute} es demasiado corto (%{count} caracteres mínimo)"
+      wrong_length: "%{attribute} no tiene la longitud correcta (%{count} caracteres exactos)"
+      not_a_number: "%{attribute} no es un número"
+      not_an_integer: "%{attribute} debe ser un entero"
+      greater_than: "%{attribute} debe ser mayor que %{count}"
+      greater_than_or_equal_to: "%{attribute} debe ser mayor que o igual a %{count}"
+      equal_to: "%{attribute} debe ser igual a %{count}"
+      less_than: "%{attribute} debe ser menor que %{count}"
+      less_than_or_equal_to: "%{attribute} debe ser menor que o igual a %{count}"
+      odd: "%{attribute} debe ser impar"
+      even: "%{attribute} debe ser par"
+      taken: "%{attribute} ya está en uso"
+      record_invalid: "%{attribute} La validación falló: %{errors}"
+    template: &errors_template
+      header:
+        one:   "No se pudo guardar este/a %{model} porque se encontró 1 error"
+        other:  "No se pudo guardar este/a %{model} porque se encontraron %{count} errores"
+      body: "Se encontraron problemas con los siguientes campos:"
+
+  warning:
+    messages:
+      change_rol: "Si cambias tu rol de administrador, perderás tus privilegios de edición de usuarios/permisos"
+
+  activerecord:
+    models:
+      user: "Usuario"
+      cliente: "Cliente"
+      neuron: "Neurona"
+      content: "Contenido"
+      settings: Preferencias
+      search_engine: Motor de búsqueda
+      profile: Árbol
+    attributes:
+      user:
+        username: "Nombre de usuario"
+        password: "Contraseña"
+        password_confirmation: "Confirmación de contraseña"
+        remember_me: "Recordarme"
+        email: "Email"
+        role: "Rol"
+        name: "Nombre"
+      cliente:
+        identificacion: "Identificación"
+        tipo_id: "Tipo de identificación"
+        direccion: "Dirección"
+        telefono: "Teléfono"
+      neuron:
+        title: Título
+        parent: Padre
+        parent_id: Padre
+        contents: Contenidos
+        active: Activa
+        is_public: Pública
+        deleted: Eliminada
+        medium: Multimedia
+        links: Enlaces
+        videos: Vídeos
+        position: Posición
+      content:
+        level: "Nivel"
+        kind: "Tipo"
+        description: "Descripción"
+        keyword_list: "Palabras clave"
+        source: Fuente
+        approved: Aprobado
+        title: Título
+        media: Multimedia
+      search_engine:
+        name: Nombre
+        gcse_id: CSE id
+        active: Activo
+      profile:
+        name: Nombre
+        biography: Biografía
+      possible_answer:
+        text: Posible respuesta
+      content_link:
+        link: Enlace
+      content_video:
+        url: URL
+
+    errors:
+      messages:
+        <<: *errors_messages
+        circular_parent: "%{child} no puede ser padre de %{parent} dado que alguno de sus padres es %{parent}"
+        content_has_description_media_or_links: Debe incluir una descripción, multimedia o enlaces
+        cannot_delete_neuron: "%{neuron} no se puede eliminar porque es pública"
+      template:
+        <<: *errors_template
+
+      full_messages:  # this doesn't work (?)
+        format: "%{message}"
+
+  actions:
+    new: "Nuevo"
+    edit: "Editar"
+    show: "Mostrar"
+    create: "Crear"
+    update: "Actualizar"
+    destroy: "Eliminar"
+    restore: "Restaurar"
+    logout: Cerrar sesión
+    my_profile: Mi perfil
+    preview: Vista previa
+    search: Buscar
+
+  user_mailer:
+    change_permission:
+      subject: "Cambio de permisos"
+
+  devise:
+    sessions:
+      user:
+        already_signed_out: Ya cerraste sesión

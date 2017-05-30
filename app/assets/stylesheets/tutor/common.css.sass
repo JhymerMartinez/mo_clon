@@ -1,0 +1,71 @@
+$white: white
+$border-color-1: #D1D5C8
+
+.action-button
+  color: $white
+  border-radius: 0.5rem
+  font-size: 18px
+
+.user-link
+  width: 15rem
+  padding: 0.5rem
+  height: 6rem
+  text-decoration: none
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  border-radius: 0.5rem
+  font-size: 18px
+
+.search-form
+  position: absolute
+  top: -4.5rem
+  width: 50%
+  .search-form-container
+    position: relative
+    border: 0.1rem solid $border-color-1
+    padding: 0
+    border-radius: 1.5rem
+    display: flex
+    height: 3rem
+    align-items: center
+    justify-content: center
+
+    .input-serction
+      flex-basis: 90%
+      height: 100%
+
+    .button-section
+      flex-basis: 10%
+      height: 100%
+      position: relative
+
+    .search-form-icon-search
+      position: absolute
+      left: 0.5rem
+      width: 2.5rem
+      top: 0.5rem
+
+    .search-form-input
+      background: transparent
+      border: none
+      display: flex
+      height: 100%
+      width: 100%
+      padding-left: 3.5rem
+
+    .search-form-submit
+      background: none
+      border: none
+      height: 100%
+      width: 100%
+
+    .search-form-icon-reload
+      position: absolute
+      right: 50%
+      width: 2.5rem
+      left: 50%
+      transform: translateX(-50%)
+      cursor: pointer
+      z-index: -1

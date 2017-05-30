@@ -1,0 +1,20 @@
+- tooltip_key = decorator.approved_options(!decorator.approved)
+- tooltip_title = t("views.contents.toggle_approve.#{tooltip_key}")
+
+span.bs-tooltip.content-toggle-approve(
+  data-placement="right"
+  data-status="#{decorator.approved_to_s}"
+  title="#{tooltip_title}"
+)
+  - icons.each do |key, icon|
+    - option = decorator.approved_options(key)
+    - modifier = key == "true" ? "success" : "default"
+
+    = link_to approve_admin_content_path(decorator),
+              method: :post,
+              class: "btn-link #{option} label label-#{modifier}" do
+      span.glyphicon class="#{icon}"
+      - if decorator.approved.to_s == key
+        = t("views.contents.approved_status.#{option}")
+      - else
+        = t("views.contents.toggle_approve.#{option}")

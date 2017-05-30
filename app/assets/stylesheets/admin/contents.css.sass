@@ -1,0 +1,68 @@
+.spellcheck-error
+  margin-left: 5px
+  font-size: 12px
+  color: #aaa
+  &:hover
+    color: #777
+
+.neuron-content
+  .content-description
+    white-space: pre-wrap
+  .content-keywords
+    margin-top: 5px
+    .label
+      margin-right: 0.5em
+      font-weight: 550
+  .content-links
+    margin-bottom: 10px
+  .content-media
+    text-align: center
+    vertical-align: middle
+    margin-bottom: 10px
+    &:not(:first-child)
+      padding-left: 5px
+    &:not(:last-child)
+      padding-right: 5px
+    a
+      display: block
+      img
+        max-height: 80px
+        max-width: 100%
+      .glyphicon
+        display: block
+        font-size: 25px
+        margin-top: 15px
+        text-align: center
+
+  hr
+    margin-top: 10px
+
+.neuron-moderate-actions
+  margin-left: 0.5em
+  .content-toggle-approve
+    display: inline-block
+    .glyphicon
+      margin-right: 3px
+    a:not(:hover)
+      text-decoration: none
+      color: white
+    &[data-status="approved"]
+      .approved
+        display: block
+      .unapproved
+        display: none
+      &:hover
+        .approved
+          display: none
+        .unapproved
+          display: block
+    &[data-status="unapproved"]
+      .approved
+        display: none
+      .unapproved
+        display: block
+      &:hover
+        .approved
+          display: block
+        .unapproved
+          display: none

@@ -1,0 +1,31 @@
+= form_for [:admin, search_engine] do |f|
+  = render "admin/shared/form_errors", resource: search_engine
+
+  .form-group
+    = f.label :name
+    = f.text_field :name,
+                   class: "form-control",
+                   required: true
+
+  .form-group
+    = f.label :slug
+    = f.text_field :slug,
+                   class: "form-control",
+                   required: true
+
+  .form-group
+    = f.label :gcse_id
+    = f.text_field :gcse_id,
+                   class: "form-control",
+                   required: true
+
+    .help-block = t("views.search_engine.gcse_help_block")
+
+  .checkbox
+    label
+      = f.check_box :active
+      = f.label :active
+
+  .actions
+    = f.submit class: "btn btn-primary",
+               data: { disable_with: t("views.submitting")}

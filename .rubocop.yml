@@ -1,0 +1,29 @@
+AllCops:
+  RunRailsCops: true
+  DisplayCopNames: true
+
+Style/BlockDelimiters:
+  EnforcedStyle: semantic
+  ProceduralMethods:
+    - benchmark
+    - bm
+    - bmbm
+    - create
+    - each_with_object
+    - measure
+    - new
+    - realtime
+    - tap
+    - with_object
+    - map
+  FunctionalMethods:
+    - let
+    - let!
+    - subject
+    - watch
+    - before
+    - sequence
+    - expose
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes

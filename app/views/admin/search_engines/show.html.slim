@@ -1,0 +1,15 @@
+- content_for :title, t("views.search_engines")
+
+h3 = decorated_search_engine.name
+
+p
+  = decorated_search_engine.status_label
+  code = decorated_search_engine.slug
+
+code = decorated_search_engine.gcse_id
+
+hr
+
+.text-right
+  = link_to t("actions.edit"),
+            edit_admin_search_engine_path(search_engine)

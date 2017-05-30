@@ -1,0 +1,2 @@
+module AnalyticService
+end

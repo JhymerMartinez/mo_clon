@@ -1,0 +1,7 @@
+.nested-content-link
+  = f.hidden_field :id
+
+  .form-group
+    = f.text_field :link,
+                   placeholder: t("views.contents.link_placeholder"),
+                   class: "form-control"

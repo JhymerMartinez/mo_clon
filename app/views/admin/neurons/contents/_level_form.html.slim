@@ -1,0 +1,14 @@
+ul.nav.nav-pills.default-tabs
+  - Content::KINDS.each do |kind|
+    li data-toggle="tab"
+      = link_to t("views.contents.kinds.#{kind}"),
+                "#content-level-#{level}-kind-#{kind}",
+                class: "persist-tab"
+
+.tab-content
+  - Content::KINDS.each do |kind|
+    .tab-pane id="content-level-#{level}-kind-#{kind}"
+      = render "admin/neurons/contents/kind_form",
+               kind: kind,
+               level: level,
+               f: f

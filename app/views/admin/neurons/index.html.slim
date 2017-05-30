@@ -1,0 +1,18 @@
+- content_for :title, t("activerecord.models.neuron").pluralize
+
+= moi_tree
+
+hr
+
+.pull-right.btn-group
+  - if can? :sort, Neuron
+    = link_to t("views.neurons.sort_tree"),
+              sort_admin_neurons_path,
+              class: "btn btn-sm btn-default"
+
+  - if can? :create, Neuron
+    = link_to t("views.neurons.new"),
+              new_admin_neuron_path,
+              class: "btn btn-sm btn-default"
+
+.clearfix

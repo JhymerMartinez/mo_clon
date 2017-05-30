@@ -1,0 +1,5 @@
+- content_for :title, t("activerecord.models.settings")
+
+- if can? :manage, SearchEngine
+  = render "admin/search_engines/index"
+  hr

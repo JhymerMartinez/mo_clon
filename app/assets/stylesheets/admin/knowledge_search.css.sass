@@ -1,0 +1,49 @@
+.knowledge-search-form
+  .form-group
+    &.query
+      display: block
+      .form-control
+        width: 100%
+        border-radius: 2em
+    &.provider
+      display: inline-block
+      min-width: 135px
+      text-align: left
+      .chosen-container
+        width: 100% !important
+        & > a
+          border-radius: 5px 0 0 5px
+    &.actions
+      display: inline-block
+      .btn
+        margin-left: 0
+        border-radius: 0 5px 5px 0
+        // chosen shadow:
+        box-shadow: 0 1px 1px rgba(0,0,0,.1)
+  .knowledge-search-results
+    text-align: center
+    iframe
+      border: 0
+      width: 100%
+      min-height: 400px
+    .knowledge-search-result
+      text-align: left
+      display: block
+      max-width: 530px
+      padding: 0 0.3em
+      margin: 1em auto 2.5em auto
+      clear: both
+      border-bottom: 1px solid #f0f0f0
+      &:hover
+        cursor: pointer
+        box-shadow: 0 1px 1px #ccc
+        border-radius: 0.3em
+      .thumbnail-container
+        float: right
+        width: 100px
+        height: 100px
+        text-align: center
+        padding: 0.3em 0.5em 0.5em 0.3em
+        img
+          max-width: 100%
+          max-height: 100%

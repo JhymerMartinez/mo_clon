@@ -1,0 +1,6 @@
+- flash.each do |key, msg|
+  - if msg.is_a?(String)
+    .flash-message
+      .alert class="alert-#{flash_message_class_for(key)}"
+        a.close data-dismiss="alert"  ×
+        = content_tag :div, msg

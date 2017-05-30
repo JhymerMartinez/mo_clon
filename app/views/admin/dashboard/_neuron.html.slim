@@ -1,0 +1,19 @@
+/ neuron.class => NeuronDecorator
+
+.neuron_dashboard.col-md-4
+  = link_to admin_neuron_path(neuron),
+            class: "neuron-show" do
+    .neuron_dashboard_content
+      h4 = neuron.title
+
+      .neuron-contents-badges
+        = neuron.contents_to_approve_badge
+        = neuron.contents_approved_badge
+
+      h5.text-muted = neuron.parent
+
+      = neuron.status_label if neuron.is_public?
+      = neuron.deleted_label if neuron.deleted?
+
+  = link_to "", edit_admin_neuron_path(neuron),
+      class: "glyphicon glyphicon-edit neuron-edit"

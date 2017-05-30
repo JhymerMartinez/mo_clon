@@ -1,0 +1,22 @@
+.col-sm-12.nested-content-media
+  = f.hidden_field :id
+
+  .form-group
+    / media
+    = tooltip t("views.contents.attach_media"),
+              place: "left",
+              class: "btn btn-xs btn-default content-media-uploader" do
+      .glyphicon.glyphicon-cloud-upload
+
+    .hidden
+      = f.file_field :media
+      = f.hidden_field :media_cache
+
+    span.content-media-name-on-form
+      - if f.object.media?
+        = decorate(f.object).link_for_form
+
+  = f.link_to_remove class: "btn btn-link bs-tooltip",
+                     title: t("views.contents.remove_media"),
+                     data: { placement: "right" } do
+    span.glyphicon.glyphicon-remove.text-danger

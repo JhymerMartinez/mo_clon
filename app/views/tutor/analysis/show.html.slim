@@ -1,0 +1,50 @@
+.container-tutor-internal.container-analysis.analysis-details
+
+  .user-name
+      = @client["name"]
+
+  .row-analysis-info
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.total_neurons_learnt")
+      .body
+        = @statistics["total_neurons_learnt"]
+
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.total_content_readings")
+      .body
+        = @statistics["total_content_readings"]
+
+  .row-analysis-info
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.total_right_questions")
+      .body
+        = @statistics["total_right_questions"]
+
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.total_notes")
+      .body
+        = @statistics["total_notes"]
+
+  .row-analysis-info
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.images_opened_in_count")
+      .body
+        = @statistics["images_opened_in_count"]
+
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.user_sign_in_count")
+      .body
+        = @statistics["user_sign_in_count"]
+
+  .row-analysis-info
+    .container-analysis-info
+      .header
+        = t("views.tutor.analysis.used_time")
+      .body
+        = @statistics["used_time"]

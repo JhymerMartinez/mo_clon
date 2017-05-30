@@ -1,0 +1,13 @@
+- content_for :title, t("activerecord.models.profile").pluralize
+
+h2 = profile.name
+
+p = profile.biography
+
+= moi_tree source: admin_profile_path(profile,
+                                      format: :json)
+
+.actions
+  = link_to t("actions.edit"),
+            edit_admin_profile_path(profile),
+            class: "btn btn-link"

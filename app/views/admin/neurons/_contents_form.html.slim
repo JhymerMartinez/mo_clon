@@ -1,0 +1,16 @@
+.row.contents_form
+  .col-sm-2
+    .list-group.default-list-group
+      - Content::LEVELS.each do |level|
+        = link_to I18n.t("views.contents.levels.#{level}"),
+                  "#contents-level-#{level}",
+                  class: "list-group-item",
+                  data: { toggle: "pill" }
+
+  .col-sm-10
+    .tab-content
+      - Content::LEVELS.each do |level|
+        .tab-pane id="contents-level-#{level}"
+          = render "admin/neurons/contents/level_form",
+                   f: f,
+                   level: level

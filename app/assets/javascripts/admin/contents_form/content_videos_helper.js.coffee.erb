@@ -1,0 +1,13 @@
+# allows adding only certain number of videos
+# removes addContentVideoBtn if enough videos
+# have been added
+
+allowedNumberOfVideos = <%= Content::NUMBER_OF_VIDEOS %>
+videosFormSelector = ".content-videos-form"
+
+$(document).on "nested:fieldAdded:content_videos", (e) ->
+  $videosForm = e.field.closest(videosFormSelector)
+  numberOfVideos = $videosForm.find(".nested-content-video").length
+  $addContentVideoBtn = $videosForm.find(".add-content-video")
+  if numberOfVideos >= allowedNumberOfVideos
+    $addContentVideoBtn.remove()

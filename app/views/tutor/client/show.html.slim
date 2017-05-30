@@ -1,0 +1,35 @@
+.container-tutor-internal.container-client
+  .left-container
+    .user-image-status
+      = image_tag("user_image_status.png")
+    .user-name
+      = @client["name"]
+    .grid-info-container
+      .row-info.row-info-header
+        .first-cell.first-cell-header
+          | N°.
+        .second-cell.second-cell-header
+          = t("views.tutor.client.description")
+      .row-info
+        .first-cell
+          = @statistics["total_neurons_learnt"]
+        .second-cell
+          = t("views.tutor.client.total_neurons_learnt")
+      .row-info
+        .first-cell
+          = @statistics["total_content_readings"]
+        .second-cell
+          = t("views.tutor.client.total_content_readings")
+      .row-info
+        .first-cell
+          = @statistics["total_right_questions"]
+        .second-cell
+          = t("views.tutor.client.total_right_questions")
+
+    .link-activity-container
+      = link_to t("views.tutor.client.activity"), tutor_analysis_path(params['id']), class:"link-user-client-activity", id:"link-user-client-activity"
+  .right-container
+    = image_tag("client_tree_landscape.png", class:"tree_landscape")
+    = image_tag("client_tree_frame.png", class:"tree_frame")
+    = image_tag(@client.tree_image.url, class:"tree-image")
+

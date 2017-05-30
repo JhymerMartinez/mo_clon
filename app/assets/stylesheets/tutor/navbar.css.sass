@@ -1,0 +1,127 @@
+$base-grey: #F2F2F2
+$dark-grey: #d1d5c8
+$border-color-1: #D1D5C8
+$bucket-height: 10rem
+$bucket-width: 12rem
+$base-color-blue: #47BAE8
+$base-color-green: #77BF5D
+$base-color-yellow: #D6B34E
+$base-color-red: #F0755C
+$base-color-purple: #DA4694
+
+=navbar-border-bottom($custom-color)
+  border-bottom: 0.5rem solid $custom-color
+
+=navbar-item-arrow($custom-color)
+  &.active:after
+    position: absolute
+    content: ""
+    width: 0
+    height: 0
+    border-top: 1rem solid $custom-color
+    border-right: 1rem solid transparent
+    border-bottom: 1rem solid transparent
+    border-left: 1rem solid transparent
+    right: 50%
+    left: 50%
+    transform: translateX(-50%)
+    bottom: -1.8rem
+
+.navbar-tutor-item-styles
+  li
+    width: $bucket-width
+    display: flex
+    position: relative
+
+    img
+      position: absolute
+      top: 1rem
+      bottom: 0
+      right: 50%
+      left: 50%
+      transform: translateX(-50%)
+      height: 5.5rem
+
+    a
+      flex-basis: 100%
+      display: flex
+      justify-content: center
+      align-items: flex-end
+      padding-bottom: 1rem
+      border-left: 0.1rem solid $border-color-1
+      cursor: pointer
+
+    &.active, &.active:hover
+      a
+        background-color: transparent
+
+
+    &:last-child
+      border-right: 0.1rem solid $border-color-1
+
+.navbar-tutor
+  border: none
+  background-color: $base-grey
+  .navbar-tutor-container
+    border-top: 0.1rem solid $border-color-1
+    border-bottom: 0.1rem solid $border-color-1
+    padding: 0
+  .navbar-tutor-first-section
+    display: flex
+    height: $bucket-height
+    @extend .navbar-tutor-item-styles
+    .navbar-link-moi
+      +navbar-border-bottom($base-color-blue)
+    .link-client
+      +navbar-border-bottom($base-color-green)
+    .navbar-link-tree
+      +navbar-border-bottom($base-color-yellow)
+    .navbar-link-analysis
+      +navbar-border-bottom($base-color-red)
+
+    .item-moi
+      +navbar-item-arrow($base-color-blue)
+    .item-client
+      +navbar-item-arrow($base-color-green)
+    .item-tree
+      +navbar-item-arrow($base-color-yellow)
+    .item-analysis
+      +navbar-item-arrow($base-color-red)
+
+
+  .navbar-tutor-last-item
+    display: flex
+    height: $bucket-height
+    margin-right: 0
+    @extend .navbar-tutor-item-styles
+    .link-tutor
+      +navbar-border-bottom($base-color-purple)
+      position: relative
+
+    .item-tutor
+      +navbar-item-arrow($base-color-purple)
+      &.open, &.open:hover
+        a
+          background-color: transparent
+
+      .caret
+        position: absolute
+        bottom: 1.8rem
+        right: 3rem
+
+      .dropdown-tutor
+        background-color: $base-grey
+
+        .tutor-option-logout
+          border: none
+          display: flex
+          justify-content: center
+          align-items: center
+          margin-right: 0
+          width: 100%
+
+          &:hover
+            background-color: $dark-grey
+
+          .link-tutor-logout
+            padding: 0.5rem

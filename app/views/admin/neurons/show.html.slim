@@ -1,0 +1,57 @@
+- content_for :title, t("views.neurons.show")
+
+ul.nav.nav-tabs.default-tabs
+  li.active data-toggle="tab"
+    = link_to t("views.neurons.general"),
+              "#general",
+              class: "persist-tab"
+
+  li data-toggle="tab"
+    = link_to t("activerecord.models.content").pluralize,
+              "#contents",
+              class: "persist-tab"
+
+.tab-content
+  .tab-pane#general.active
+    h3 = decorated_neuron.title
+    h5 = decorated_neuron.parent_title
+    h5 = decorated_neuron.status_label
+    h5 = decorated_neuron.deleted_label if neuron.deleted?
+
+  .tab-pane#contents
+    .row.contents_form
+      .col-sm-2
+        .list-group.default-list-group
+          - Content::LEVELS.each do |level|
+            = link_to I18n.t("views.contents.levels.#{level}"),
+                      "#contents-level-#{level}",
+                      class: "list-group-item",
+                      data: { toggle: "pill" }
+
+      .col-sm-10
+        .tab-content
+          - Content::LEVELS.each do |level|
+            .tab-pane id="contents-level-#{level}"
+              ul.nav.nav-pills.default-tabs
+                - Content::KINDS.each do |kind|
+                  li data-toggle="tab"
+                    = link_to t("views.contents.kinds.#{kind}"),
+                              "#content-level-#{level}-kind-#{kind}",
+                              class: "persist-tab"
+
+              .tab-content
+                - Content::KINDS.each do |kind|
+                  .tab-pane id="content-level-#{level}-kind-#{kind}"
+                    = render "admin/neurons/contents/show",
+                      kind: kind,
+                      level: level
+.actions
+  - if action_name != "preview" && neuron.versions.any?
+    = link_to t("views.neurons.show_changelog"),
+              admin_neuron_log_path(neuron),
+              class: "btn btn-link"
+
+  - unless neuron.new_record?
+    = link_to t("actions.edit"),
+              edit_admin_neuron_path(neuron),
+              class: "btn btn-link"

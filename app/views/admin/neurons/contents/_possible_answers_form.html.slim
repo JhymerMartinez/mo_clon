@@ -1,0 +1,11 @@
+fieldset
+  legend = t("views.contents.test")
+  label.test-question = f.object.title
+  .row
+    .col-xs-12
+      = f.fields_for :possible_answers do |answer_form|
+        = render "admin/neurons/possible_answers/form",
+                 f: answer_form
+      = f.link_to_add :possible_answers,
+                      class: "hidden add-possible-answer" do
+        span.glyphicon.glyphicon-plus.text-success

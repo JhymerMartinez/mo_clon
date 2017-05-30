@@ -1,0 +1,15 @@
+script#knowledge-search-result-template type="text/x-handlebars-template"
+  | {{#each results}}
+  .knowledge-search-result data-href="{{link}}"
+    | {{#if thumbnail}}
+    .thumbnail-container
+      img src="{{thumbnail.src}}"
+    | {{/if}}
+    h5
+      | {{{htmlTitle}}}
+    p
+      | {{snippet}}
+      div
+        a href="{{link}}" target="_blank" {{formattedUrl}}
+
+  | {{/each}}

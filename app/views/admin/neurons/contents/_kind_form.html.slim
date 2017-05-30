@@ -1,0 +1,13 @@
+= f.fields_for :contents,
+               formatted_contents.fetch(level).fetch(kind) do |content_form|
+  .content-form
+    = render "admin/neurons/contents/form",
+             f: content_form
+
+= f.link_to_add :contents,
+                class: "btn btn-default bs-tooltip",
+                title: t("views.neurons.add_content"),
+                data: { level: level,
+                        kind: kind,
+                        placement: "left" } do
+  span.glyphicon.glyphicon-plus.text-success

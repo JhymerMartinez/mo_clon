@@ -1,0 +1,10 @@
+h3 = t("views.search_engines")
+
+.pull-right
+  = link_to new_admin_search_engine_path,
+            class: "btn btn-default btn-xs" do
+    i.glyphicon.glyphicon-plus
+
+ul
+  - search_engines.each do |search_engine|
+    li = render search_engine

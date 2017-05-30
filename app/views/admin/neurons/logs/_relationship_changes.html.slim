@@ -1,0 +1,6 @@
+h5 = t("views.contents.#{kind}")
+.neuron-contents
+  - collection.each do |version|
+    = render "changes", changes: version.changes
+    span.label.label-default = version.event_str
+    hr

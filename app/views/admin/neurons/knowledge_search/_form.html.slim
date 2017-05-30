@@ -1,0 +1,32 @@
+= render "admin/neurons/knowledge_search/result_template"
+
+.modal.fade.knowledge-search-form
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" &times;
+        h4 = t("views.contents.external_source")
+      .modal-body
+        = form_tag admin_external_search_path do
+          .form-group.query
+            = text_field_tag :q,
+                             nil,
+                             class: "form-control",
+                             required: true,
+                             placeholder: t("views.contents.search_query")
+          .text-right
+            .help-block.pull-left
+              = t("views.contents.external_source_help")
+            .form-group.provider
+              = select_tag :provider,
+                           options_from_collection_for_select(search_engines, :slug, :name)
+            .form-group.actions
+              = submit_tag t("actions.search"),
+                           class: "btn btn-primary"
+
+        hr
+
+        .hidden.loading-spinner
+          .spinner-icon
+
+        .knowledge-search-results

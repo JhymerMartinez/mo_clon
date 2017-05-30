@@ -1,0 +1,31 @@
+nav.navbar.navbar-default.navbar-fixed-top.navbar-tutor
+  .container.navbar-tutor-container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-tutor-first-section
+        li.item-moi(class=(params[:controller] == 'tutor/moi' ? 'active' : ''))
+          = image_tag("moi_navbar_brain.png")
+          = link_to t("views.tutor.navbar.moi"), tutor_moi_index_path, class:"navbar-link-moi", id:"navbar-link-moi"
+        li.item-client(class=(params[:controller] == 'tutor/client' ? 'active' : ''))
+          = image_tag("moi_navbar_client.png")
+          = link_to t("views.tutor.navbar.client"), tutor_client_index_path, class:"link-client", id:"navbar-link-client"
+        li.item-tree(class=(params[:controller] == 'tutor/tree' ? 'active' : ''))
+          = image_tag("moi_navbar_tree.png")
+          = link_to t("views.tutor.navbar.tree"), tutor_tree_index_path, class:"navbar-link-tree", id:"navbar-link-tree"
+        li.item-analysis(class=(params[:controller] == 'tutor/analysis' ? 'active' : ''))
+          = image_tag("moi_navbar_chart.png")
+          = link_to t("views.tutor.navbar.analisys"), tutor_analysis_index_path, class:"navbar-link-analysis", id:"navbar-link-analysis"
+      ul.nav.navbar-nav.navbar-right.navbar-tutor-last-item
+        li.item-tutor.dropdown
+          = image_tag("moi_navbar_tutor.png")
+          a.link-tutor.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+            = t("views.tutor.navbar.tutor")
+            span.caret
+          ul.dropdown-menu.dropdown-tutor
+            li.tutor-option-logout
+              = link_to t("views.tutor.navbar.logout"), destroy_user_session_path, class:"link-tutor-logout", :method => :delete

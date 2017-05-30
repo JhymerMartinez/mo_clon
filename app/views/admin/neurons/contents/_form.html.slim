@@ -1,0 +1,52 @@
+= f.hidden_field :level, class: "content-level"
+= f.hidden_field :kind, class: "content-kind"
+
+fieldset
+  legend = t("views.contents.basic_info")
+  .form-group
+    = tooltip t("views.contents.title_tooltip"),
+              place: "left" do
+      = f.text_field :title,
+                     placeholder: t("activerecord.attributes.content.title"),
+                     class: "form-control content-title"
+
+  .form-group
+    = f.text_area :description,
+                  placeholder: t("activerecord.attributes.content.description"),
+                  class: "form-control"
+
+  .form-group
+    = tooltip t("views.contents.keyword_list_form_instructions"),
+              place: "left" do
+      = f.text_field :keyword_list,
+                      placeholder: t("activerecord.attributes.content.keyword_list"),
+                     value: f.object.keyword_list.join(","),
+                     class: "form-control input-tags"
+
+  .form-group.content-form-source
+    .row
+      .col-xs-11
+        = f.text_field :source,
+                       placeholder: t("activerecord.attributes.content.source"),
+                       class: "form-control"
+
+      .col-xs-1.text-right.external-source-btn
+          = tooltip t("views.contents.external_source"),
+                    place: "right",
+                    class: "btn btn-default knowledge-search-btn" do
+            .glyphicon.glyphicon-globe
+
+= render "admin/neurons/contents/videos_form",
+         f: f
+= render "admin/neurons/contents/media_form",
+         f: f
+= render "admin/neurons/contents/links_form",
+         f: f
+= render "admin/neurons/contents/possible_answers_form",
+         f: f
+
+.actions
+  = f.link_to_remove class: "btn btn-link" do
+    span.glyphicon.glyphicon-remove.text-danger
+
+hr.content-divider
